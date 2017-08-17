@@ -1,0 +1,186 @@
+{
+res =     {
+"add_time" = 1501033250;
+"dg_time" = 1501119829;
+email = "long_ear@163.com";
+good =         (
+{
+"add_time" = 1500998400;
+id = 192;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_05_74305.png",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_07_59949.jpg"
+);
+title = "Started to produce";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_13_96822.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_15_53308.jpg"
+);
+title = "Started to produce";
+}
+);
+shuoming = "Started to produce";
+stu = 1;
+sure = 2;
+title = "Started to produce";
+},
+{
+"add_time" = 1501033284;
+id = 193;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_34_83806.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_40_69210.jpg"
+);
+title = "Production of complete";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_55_30137.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_41_57_73316.jpg"
+);
+title = "Production of complete";
+}
+);
+shuoming = "Production of complete";
+stu = 2;
+sure = 2;
+title = "Production of complete";
+},
+{
+"add_time" = 1501033326;
+id = 194;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_16_17789.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_18_99815.jpg"
+);
+title = " Is the packaging";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_24_98118.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_26_70864.jpg"
+);
+title = "Production of complete";
+}
+);
+shuoming = " Is the packaging";
+stu = 3;
+sure = 2;
+title = "Is the packaging";
+},
+{
+"add_time" = 1501033354;
+id = 195;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_42_39317.png",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_42_48_41648.jpg"
+);
+title = "Is the container";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_01_58164.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_03_73789.jpg"
+);
+title = "Is the container";
+}
+);
+shuoming = "Is the container";
+stu = 4;
+sure = 2;
+title = "Is the container";
+},
+{
+"add_time" = 1501119793;
+id = 196;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_23_50740.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_25_61915.jpg"
+);
+title = "The customs clearance";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_31_69301.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_43_33_29171.jpg"
+);
+title = "The customs clearance";
+}
+);
+shuoming = "The customs clearance";
+stu = 5;
+sure = 2;
+title = "The customs clearance";
+},
+{
+"add_time" = 1501119827;
+id = 197;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_44_39_52918.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_44_41_50415.jpg"
+);
+title = "Ship by sea/to port";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_44_47_35026.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_44_49_38083.jpg"
+);
+title = "Ship by sea/to port";
+}
+);
+shuoming = "Ship by sea/to port";
+stu = 6;
+sure = 2;
+title = "Ship by sea/to port";
+},
+{
+"add_time" = 1501119897;
+id = 198;
+item =                 (
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_45_41_85610.jpg",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_45_42_49061.jpg"
+);
+title = " Send the file";
+},
+{
+img =                         (
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_45_47_29465.png",
+"/Public/Uploads/order_img/2017-07-26/2017_07_26_09_45_49_63250.png"
+);
+title = " Send the file";
+}
+);
+shuoming = " Send the file";
+stu = 8;
+sure = 2;
+title = "Send the file";
+}
+);
+id = 59;
+"is_fx" = 1;
+"kd_name" = zhongtong;
+"kd_num" = 15615615615616;
+"order_num" = 1568956;
+stu = 9;
+uid = 12;
+"wc_time" = 1501292758;
+};
+stu = 1;
+}
