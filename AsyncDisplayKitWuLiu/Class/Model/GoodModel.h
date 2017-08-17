@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface GoodModel : NSObject
-
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSMutableArray *productImageArray;
 @end

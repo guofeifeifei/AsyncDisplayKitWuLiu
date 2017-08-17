@@ -7,10 +7,8 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-
 @interface ImageCell : ASCellNode
 - (instancetype)initWithCommentItem:(NSString *)imageUrl;
 // UI
 @property (nonatomic, strong) ASImageNode *imageNode;
-
 @end

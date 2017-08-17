@@ -9,5 +9,11 @@
 #import "GoodModel.h"
 
 @implementation GoodModel
+- (NSMutableArray *)productImageArray{
+    if (_productImageArray == nil) {
+        _productImageArray = [[NSMutableArray alloc] init];
+    }
+    return _productImageArray;
+}
 
 @end

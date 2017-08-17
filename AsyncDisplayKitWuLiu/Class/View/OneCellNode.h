@@ -7,7 +7,19 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-
-@interface OneCellNode : ASCellNode
+#import "OrderModel.h"
+#import "DateView.h"
+#import "GoodImageView.h"
+@interface OneCellNode : ASCellNode{
+    CGFloat _allHeight;
+    CGFloat _tableHeight;
+}
+@property (nonatomic, strong) DateView *dateNode;
+@property (nonatomic, strong) ASTextNode *titleNode;
+@property (nonatomic, strong) ASTextNode *descNode;
+@property (nonatomic, strong) OrderModel *orderNodel;
+@property (nonatomic, strong) NSArray *replayNodes;
+@property (nonatomic, strong) NSIndexPath *index;
+- (instancetype)initWithCommentItem:(OrderModel *)item indexPath:(NSIndexPath *)indexPath;
 
 @end

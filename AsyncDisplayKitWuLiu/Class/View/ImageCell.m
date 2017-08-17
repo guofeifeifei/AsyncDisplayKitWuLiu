@@ -35,10 +35,9 @@
 
     ASNetworkImageNode *imageNode = [[ASNetworkImageNode alloc]init];
     imageNode.placeholderEnabled = YES;
-    imageNode.placeholderColor = RGB_255(245, 245, 245);
     imageNode.layerBacked = YES;
     imageNode.contentMode = UIViewContentModeScaleToFill;
-    imageNode.defaultImage = [UIImage imageNamed:@"defult_pho"];
+    imageNode.defaultImage = [UIImage imageNamed:@"placeImage.png"];
     imageNode.URL = [NSURL URLWithString:_imageUrl];
     [self addSubnode:imageNode];
     _imageNode = imageNode;
@@ -46,7 +45,7 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
 {
-    _imageNode.style.preferredSize = CGSizeMake(90 *widthScale, 90 *widthScale);
+    _imageNode.style.preferredSize = CGSizeMake(50 *widthScale, 50 *widthScale);
     ASStackLayoutSpec *verStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:8 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsCenter children:@[_imageNode]];
     return verStackLayout;
 }

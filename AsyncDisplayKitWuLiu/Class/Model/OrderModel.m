@@ -10,4 +10,11 @@
 
 @implementation OrderModel
 
+- (NSMutableArray *)goodArray{
+    if (_goodArray == nil) {
+        self.goodArray = [[NSMutableArray alloc] init];
+    }
+    return _goodArray;
+}
+
 @end
