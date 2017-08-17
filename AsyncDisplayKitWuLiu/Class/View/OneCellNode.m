@@ -51,6 +51,7 @@
     self.descNode.attributedText = [[NSAttributedString alloc]initWithString:self.orderNodel.desc attributes:attrs];
     [self addSubnode:self.descNode];
     
+    //计算descNode的高度
     CGSize attSize = [self.descNode.attributedText boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
 
     _allHeight += attSize.height  + 8;//加上8是加上布局间距
@@ -59,7 +60,7 @@
 
 - (void)addGoodNode{
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.orderNodel.goodArray.count];
-
+//遍历循环创建每个商品条目
     for (int i = 0; i<self.orderNodel.goodArray.count; i++) {
                 GoodImageView *node = [[GoodImageView alloc]initWithCommentItem:self.orderNodel.goodArray[i]];
                 [self addSubnode:node];
@@ -75,12 +76,13 @@
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
 {
     NSArray *goodArray = self.orderNodel.goodArray;
-     //for循环计算每个cell高度
+     //for循环计算每个ASCollectionNode 的cell高度
     for (GoodModel *goodModel in goodArray) {
         NSDictionary *dic = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:15.0f]};  //指定字号
         CGRect rect = [goodModel.name boundingRectWithSize:CGSizeMake(0, 50)/*计算宽度时要确定高度*/ options:NSStringDrawingUsesLineFragmentOrigin |
                        NSStringDrawingUsesFontLeading attributes:dic context:nil];
         _tableHeight += rect.size.height;
+        //60是底部间距10高高度50
         if (goodModel.productImageArray.count % 4 == 0) {
             _tableHeight += 60 * widthScale * (goodModel.productImageArray.count / 4);
         }else{
@@ -92,14 +94,15 @@
     NSLog(@"%ld", self.index.row);
     NSMutableArray *rightArray =[[NSMutableArray alloc] initWithObjects:_titleNode, _descNode,nil];
     [rightArray addObjectsFromArray:_replayNodes];
-    ASStackLayoutSpec *verStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:rightArray];
-    verStackLayout.style.flexGrow = YES;
-    verStackLayout.style.flexShrink  = YES;
+    
+    ASStackLayoutSpec *rightStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:rightArray];
+    rightStackLayout.style.flexGrow = YES;
+    rightStackLayout.style.flexShrink  = YES;
 
     //设置个每个cell间距10
     self.dateNode.style.preferredSize =  CGSizeMake(130 * widthScale,_allHeight + 10);
     self.dateNode.style.flexShrink = YES;
-     ASStackLayoutSpec *horStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[self.dateNode,verStackLayout]];
+     ASStackLayoutSpec *horStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[self.dateNode,rightStackLayout]];
     horStackLayout.style.flexShrink = YES;
     return horStackLayout;
 }

@@ -43,8 +43,7 @@
     }
     return self;
 }
-- (void)addTableNode
-{
+- (void)addTableNode{
     _tableNode = [[ASTableNode alloc] init];
     _tableNode.backgroundColor = [UIColor whiteColor];
     _tableNode.userInteractionEnabled = YES;

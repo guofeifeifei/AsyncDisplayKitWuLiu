@@ -76,7 +76,8 @@
         CGSize collectionNodeSize = CGSizeMake(GFMainScreenWidth - 145*widthScale, 50 * widthScale * (self.goodModel.productImageArray.count / 4));
         _collectionNode.style.preferredSize = collectionNodeSize;
     }else{
-        CGSize collectionNodeSize = CGSizeMake(GFMainScreenWidth - 145*widthScale, 50 *widthScale * (self.goodModel.productImageArray.count / 4 + 1));
+        //60是底部间距10高高度50
+        CGSize collectionNodeSize = CGSizeMake(GFMainScreenWidth - 145*widthScale, 60 *widthScale * (self.goodModel.productImageArray.count / 4 + 1));
         _collectionNode.style.preferredSize = collectionNodeSize;
     }
     ASStackLayoutSpec *verStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:5 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch children:@[self.goodTitleNode, _collectionNode]];
