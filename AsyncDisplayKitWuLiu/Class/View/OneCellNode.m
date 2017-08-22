@@ -11,8 +11,6 @@
 @implementation OneCellNode
 - (instancetype)initWithCommentItem:(OrderModel *)item indexPath:(NSIndexPath *)indexPath{
     if (self = [super init]) {
-        _allHeight = 0;
-        _tableHeight = 0;
         self.index = indexPath;
         self.orderNodel = item;
         [self addDateNode];
@@ -39,9 +37,6 @@
     self.titleNode.attributedText = [[NSAttributedString alloc]initWithString:self.orderNodel.title attributes:attrs];
     [self addSubnode:self.titleNode];
     
-    //计算title高度
-    CGSize attSize = [self.titleNode.attributedText boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
-    _allHeight += attSize.height + 8;//加上8是加上布局间距
 }
 - (void)addDescNode{
     self.descNode = [[ASTextNode alloc] init];
@@ -51,16 +46,11 @@
     self.descNode.attributedText = [[NSAttributedString alloc]initWithString:self.orderNodel.desc attributes:attrs];
     [self addSubnode:self.descNode];
     
-    //计算descNode的高度
-    CGSize attSize = [self.descNode.attributedText boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
-
-    _allHeight += attSize.height  + 8;//加上8是加上布局间距
-
 }
 
 - (void)addGoodNode{
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.orderNodel.goodArray.count];
-//遍历循环创建每个商品条目
+   //遍历循环创建每个商品条目
     for (int i = 0; i<self.orderNodel.goodArray.count; i++) {
                 GoodImageView *node = [[GoodImageView alloc]initWithCommentItem:self.orderNodel.goodArray[i]];
                 [self addSubnode:node];
@@ -75,11 +65,9 @@
     self.dateNode.frame = CGRectMake(0, 0, 130 * widthScale, self.frame.size.height);
 
 }
-- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
-{
+- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize{
     NSMutableArray *rightArray =[[NSMutableArray alloc] initWithObjects:_titleNode, _descNode,nil];
     [rightArray addObjectsFromArray:_replayNodes];
-    
     ASStackLayoutSpec *rightStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:rightArray];
     rightStackLayout.style.flexGrow = YES;
     rightStackLayout.style.flexShrink  = YES;

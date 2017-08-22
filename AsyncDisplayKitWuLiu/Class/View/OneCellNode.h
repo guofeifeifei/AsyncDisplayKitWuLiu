@@ -10,10 +10,7 @@
 #import "OrderModel.h"
 #import "DateView.h"
 #import "GoodImageView.h"
-@interface OneCellNode : ASCellNode{
-    CGFloat _allHeight;
-    CGFloat _tableHeight;
-}
+@interface OneCellNode : ASCellNode
 @property (nonatomic, strong) DateView *dateNode;
 @property (nonatomic, strong) ASTextNode *titleNode;
 @property (nonatomic, strong) ASTextNode *descNode;
