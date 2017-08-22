@@ -72,37 +72,22 @@
 }
 - (void)layout{
     [super layout];
+    self.dateNode.frame = CGRectMake(0, 0, 130 * widthScale, self.frame.size.height);
+
 }
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
 {
-    NSArray *goodArray = self.orderNodel.goodArray;
-     //for循环计算每个ASCollectionNode 的cell高度
-    for (GoodModel *goodModel in goodArray) {
-        NSDictionary *dic = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:15.0f]};  //指定字号
-        CGRect rect = [goodModel.name boundingRectWithSize:CGSizeMake(0, 50)/*计算宽度时要确定高度*/ options:NSStringDrawingUsesLineFragmentOrigin |
-                       NSStringDrawingUsesFontLeading attributes:dic context:nil];
-        _tableHeight += rect.size.height;
-        //60是底部间距10高高度50
-        if (goodModel.productImageArray.count % 4 == 0) {
-            _tableHeight += 60 * widthScale * (goodModel.productImageArray.count / 4);
-        }else{
-            _tableHeight += 60 * widthScale * (goodModel.productImageArray.count / 4 + 1);
-        }
-    }
-    _allHeight += _tableHeight;
-   
-    NSLog(@"%ld", self.index.row);
     NSMutableArray *rightArray =[[NSMutableArray alloc] initWithObjects:_titleNode, _descNode,nil];
     [rightArray addObjectsFromArray:_replayNodes];
     
     ASStackLayoutSpec *rightStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:rightArray];
     rightStackLayout.style.flexGrow = YES;
     rightStackLayout.style.flexShrink  = YES;
-
+    
     //设置个每个cell间距10
-    self.dateNode.style.preferredSize =  CGSizeMake(130 * widthScale,_allHeight + 10);
+    self.dateNode.style.preferredSize =  CGSizeMake(130 * widthScale,100);
     self.dateNode.style.flexShrink = YES;
-     ASStackLayoutSpec *horStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[self.dateNode,rightStackLayout]];
+    ASStackLayoutSpec *horStackLayout = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[self.dateNode,rightStackLayout]];
     horStackLayout.style.flexShrink = YES;
     return horStackLayout;
 }
