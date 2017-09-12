@@ -2,6 +2,7 @@
 详细内容：http://www.jianshu.com/p/608fffd49bcf
 ===
 ![app.gif](/Image/app.gif)
+
 最近学习AsyncDisplayKit的使用，现在将自己这几天的学习的成果记录一下，大家可以看一下，有什么不对的或者更好的方法大家也可以学习交流一下。AsyncDisplayKit的使用好处：在复杂布局的界面流畅丝毫不弱。（原理大家可以去看官方文档 http://texturegroup.org/docs/getting-started.html）
 
 ####第一天
